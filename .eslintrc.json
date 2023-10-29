@@ -8,5 +8,8 @@
         "allowReferrer": true
       }
     ]
+  },
+  "env": {
+    "jest": true
   }
 }
