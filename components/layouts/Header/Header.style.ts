@@ -5,10 +5,20 @@ import { AppBar, styled } from '@mui/material'
 const StyledHeader = styled(AppBar)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
-  height: '48px',
+  height: '64px',
   padding: '0 16px 0px 16px',
   backgroundColor: '#ffffff',
   color: theme.palette.secondary.main,
+  boxShadow: 'none',
+  borderBottom: '1px solid #dae2ed',
+
+  '.header-right': {
+    '.icon': {
+      '&:not(:last-child)': {
+        marginRight: '8px',
+      },
+    },
+  },
 
   '.user-btn-container': {
     button: {
