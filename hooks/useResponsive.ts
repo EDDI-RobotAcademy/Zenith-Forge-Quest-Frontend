@@ -12,18 +12,24 @@ export function useResponsive() {
   const isLaptopMedia = useMediaQuery(customBreakpoints.laptop)
   const isDesktopMedia = useMediaQuery(customBreakpoints.desktop)
 
-  const isMobile = useMemo(() => mounted && _isMobile && isMobileMedia, [isMobileMedia, mounted])
+  const isMobile = useMemo(() => mounted && isMobileMedia, [isMobileMedia, mounted])
 
-  const isTablet = useMemo(() => mounted && _isTablet && isTabletMedia, [isTabletMedia, mounted])
+  const isTablet = useMemo(() => mounted && isTabletMedia, [isTabletMedia, mounted])
 
-  const isLaptop = useMemo(() => mounted && _isBrowser && isLaptopMedia, [isLaptopMedia, mounted])
+  const isLaptop = useMemo(() => mounted && isLaptopMedia, [isLaptopMedia, mounted])
 
-  const isDesktop = useMemo(() => mounted && _isBrowser && isDesktopMedia, [isDesktopMedia, mounted])
+  const isDesktop = useMemo(() => mounted && isDesktopMedia, [isDesktopMedia, mounted])
+
+  const isMobileOrTablet = useMemo(() => isMobile || isTablet, [isMobile, isTablet])
+
+  const isLaptopOrDesktop = useMemo(() => isLaptop || isDesktop, [isLaptop, isDesktop])
 
   return {
     isMobile,
     isTablet,
     isLaptop,
     isDesktop,
+    isMobileOrTablet,
+    isLaptopOrDesktop,
   }
 }

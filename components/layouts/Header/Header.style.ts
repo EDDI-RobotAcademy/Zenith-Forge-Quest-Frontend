@@ -3,9 +3,21 @@ import customBreakpoints from '@/styles/breakpoints'
 import { AppBar, styled } from '@mui/material'
 
 const StyledHeader = styled(AppBar)(({ theme }) => ({
-  padding: '0 40px 0 40px',
-  backgroundColor: theme.palette.secondary.main,
-  color: theme.palette.common.white,
+  display: 'flex',
+  justifyContent: 'center',
+  height: '48px',
+  padding: '0 16px 0px 16px',
+  backgroundColor: '#ffffff',
+  color: theme.palette.secondary.main,
+
+  '.user-btn-container': {
+    button: {
+      fontWeight: 'bold',
+    },
+    '.login-btn': {
+      marginRight: '8px',
+    },
+  },
 
   '.nav-link-container': {
     a: {
@@ -18,9 +30,10 @@ const StyledHeader = styled(AppBar)(({ theme }) => ({
     },
   },
 
-  [customBreakpoints.mobile]: {
-    backgroundColor: theme.palette.primary.main,
-    padding: theme.spacing(4),
+  [customBreakpoints.tablet]: {
+    '.header-right': {
+      display: 'flex',
+    },
   },
 }))
 

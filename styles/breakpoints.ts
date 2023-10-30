@@ -3,7 +3,7 @@ import theme from './theme'
 
 const customBreakpoints: I_Breakpoints = {
   mobile: theme.breakpoints.down('md'),
-  tablet: theme.breakpoints.between('sm', 'md'),
+  tablet: theme.breakpoints.up('md'),
   laptop: theme.breakpoints.between('md', 'lg'),
   desktop: theme.breakpoints.up('lg'),
 }
