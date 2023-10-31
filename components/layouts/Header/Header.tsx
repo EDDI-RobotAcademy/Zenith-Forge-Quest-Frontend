@@ -5,44 +5,47 @@ import StyledHeader from './Header.style'
 import Link from 'next/link'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Desktop, Laptop, Mobile, Tablet } from '@/components/common/ResponsiveViews/ResponsiveViews'
-import { Button } from '@mui/material'
+import { Button, Tooltip } from '@mui/material'
 import PersonIcon from '@mui/icons-material/Person'
 import SquareIconBtn from '@/components/common/SquareIconBtn/SquareIconBtn'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
 import SearchIcon from '@mui/icons-material/Search'
-
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 function Header() {
   return (
     <StyledHeader>
       <Flexbox alignItems="center" justifyContent="space-between">
-        <Mobile>
-          <SquareIconBtn color="secondary" aria-label="menu">
-            <MenuIcon fontSize="small" />
-          </SquareIconBtn>
-        </Mobile>
-
-        <h1>
-          <Link href="/">로고</Link>
-        </h1>
+        <div className="header-left">
+          <Mobile>
+            <h1>
+              <Link href="/">로고</Link>
+            </h1>
+          </Mobile>
+        </div>
 
         <div className="header-right">
           <Mobile>
-            <SquareIconBtn className="icon search" color="secondary" aria-label="login & signup">
-              <SearchIcon fontSize="small" />
+            <SquareIconBtn className="icon search" color="secondary" aria-label="search">
+              <SearchIcon />
             </SquareIconBtn>
 
-            <SquareIconBtn className="icon git" color="secondary" aria-label="login & signup">
-              <GitHubIcon fontSize="small" />
-            </SquareIconBtn>
+            <Tooltip title="GitHub repository">
+              <SquareIconBtn className="icon git" color="secondary" aria-label="GitHub repository">
+                <GitHubIcon />
+              </SquareIconBtn>
+            </Tooltip>
 
-            <SquareIconBtn className="icon notification" color="secondary" aria-label="login & signup">
-              <NotificationsNoneIcon fontSize="small" />
-            </SquareIconBtn>
+            <Tooltip title="Turn off the light">
+              <SquareIconBtn className="icon person" color="secondary" aria-label="Turn off the light">
+                <DarkModeOutlinedIcon />
+              </SquareIconBtn>
+            </Tooltip>
 
-            <SquareIconBtn className="icon person" color="secondary" aria-label="login & signup">
-              <PersonIcon fontSize="small" />
-            </SquareIconBtn>
+            <Tooltip title="Menu button">
+              <SquareIconBtn className="icon menu" color="secondary" aria-label="menu">
+                <MenuIcon />
+              </SquareIconBtn>
+            </Tooltip>
           </Mobile>
 
           <Desktop>

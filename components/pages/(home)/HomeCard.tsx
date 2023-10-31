@@ -13,9 +13,9 @@ function HomeCard() {
   return (
     <StyledHomeCard>
       <div className="card-top">
-        <CardMedia sx={{ height: 200 }} image="/images/team-work-meeting-with-females.jpg" title="green iguana" />{' '}
+        <CardMedia sx={{ height: 200 }} image="/images/team-work-meeting-with-females.jpg" title="green iguana" />
       </div>
-      <CardContent className="card-bottom">
+      <CardContent className="card-contents">
         <div className="card category">
           <Chip color="info" clickable className="test" label="Javascript" component="a" />
         </div>
@@ -23,12 +23,6 @@ function HomeCard() {
           <Link className="anchor-under" href="/">
             팀으로 일하는 디자이너의 커뮤니케이션 팁
           </Link>
-        </div>
-        <div className="card time">
-          <AccessTimeIcon fontSize="small" />
-          <div className="minute">7분</div>
-          <div className="">|</div>
-          <div className="hours">5시간 전</div>
         </div>
 
         <div className="card contents">
@@ -39,15 +33,22 @@ function HomeCard() {
             사람들과 서로 윈윈하며 공동의 목표를 달성할 수 있는 디자이너의 커뮤니케이션 팁을 몇 가지 알려드리겠습니다.
           </Link>
         </div>
+
+        <Flexbox justifyContent="inherit">
+          <Avatar>
+            <InsertEmoticonIcon fontSize="small" />
+          </Avatar>
+          <Typography>냐하하하하하</Typography>
+        </Flexbox>
       </CardContent>
 
       <CardContent className="card-footer">
         <Flexbox justifyContent="space-between">
-          <Flexbox justifyContent="inherit">
-            <Avatar>
-              <InsertEmoticonIcon />
-            </Avatar>
-            <Typography>냐하하하하하</Typography>
+          <Flexbox className="card-time" justifyContent="inherit">
+            <AccessTimeIcon fontSize="small" />
+            <div className="minute">7분</div>
+            <div className="">|</div>
+            <div className="hours">5시간 전</div>
           </Flexbox>
 
           <Flexbox>

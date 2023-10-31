@@ -13,8 +13,8 @@ const StyledHomeCard = styled(Card)(({ theme }) => ({
     boxShadow: '0px 4px 16px ' + theme.palette.grey[200], // 호버 시 박스 그림자 변경
   },
 
-  '.card-bottom': {
-    padding: '16px 16px 0px 16px',
+  '.card-contents': {
+    padding: '16px',
 
     '.card': {
       marginBottom: '16px',
@@ -29,25 +29,6 @@ const StyledHomeCard = styled(Card)(({ theme }) => ({
         fontSize: '18px',
       },
 
-      '&.time': {
-        display: 'flex',
-        alignItems: 'center',
-        fontSize: '14px',
-
-        '.MuiSvgIcon-root': {
-          marginTop: '2px',
-        },
-
-        '.minute': {
-          marginLeft: '4px',
-          marginRight: '4px',
-        },
-
-        '.hours': {
-          marginLeft: '4px',
-        },
-      },
-
       '&.contents': {
         fontSize: '14px',
       },
@@ -58,11 +39,38 @@ const StyledHomeCard = styled(Card)(({ theme }) => ({
         },
       },
     },
+
+    '.MuiAvatar-root': {
+      width: '24px',
+      height: '24px',
+      marginRight: '8px',
+    },
+    '.MuiTypography-root': {
+      fontSize: '12px',
+      color: theme.palette.grey[500],
+    },
   },
 
   '.card-footer': {
-    '.MuiAvatar-root': {
-      marginRight: '8px',
+    borderTop: '1px solid ' + theme.palette.grey[100], // 테두리 색상 변경
+    padding: '12px',
+    paddingBottom: '12px !important',
+
+    '.card-time': {
+      fontSize: '14px',
+
+      '.MuiSvgIcon-root': {
+        marginTop: '2px',
+      },
+
+      '.minute': {
+        marginLeft: '4px',
+        marginRight: '4px',
+      },
+
+      '.hours': {
+        marginLeft: '4px',
+      },
     },
   },
 }))
