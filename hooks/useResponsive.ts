@@ -1,16 +1,11 @@
-import customBreakpoints from '@/styles/breakpoints'
-import { useMediaQuery } from '@mui/material'
 import { useMemo } from 'react'
 import { isBrowser as _isBrowser, isMobile as _isMobile, isTablet as _isTablet } from 'react-device-detect'
 import { useIsMounted } from './useIsMounted'
+import { useMediaQueryDeviceType } from './useMediaQueryDeviceType'
 
 export function useResponsive() {
   const mounted = useIsMounted()
-
-  const isMobileMedia = useMediaQuery(customBreakpoints.mobile)
-  const isTabletMedia = useMediaQuery(customBreakpoints.tablet)
-  const isLaptopMedia = useMediaQuery(customBreakpoints.laptop)
-  const isDesktopMedia = useMediaQuery(customBreakpoints.desktop)
+  const { isMobileMedia, isTabletMedia, isLaptopMedia, isDesktopMedia } = useMediaQueryDeviceType()
 
   const isMobile = useMemo(() => mounted && isMobileMedia, [isMobileMedia, mounted])
 

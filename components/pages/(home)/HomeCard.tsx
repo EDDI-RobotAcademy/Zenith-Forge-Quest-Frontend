@@ -7,7 +7,7 @@ import { Avatar, CardContent, IconButton, Typography } from '@mui/material'
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline'
 import ShareIcon from '@mui/icons-material/Share'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
-import { Flexbox } from '@/components/common/Box/Box'
+import { Flexbox } from '@/components/common/FlexBox/FlexBox'
 
 function HomeCard() {
   return (

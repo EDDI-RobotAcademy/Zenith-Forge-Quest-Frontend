@@ -1,17 +1,21 @@
 'use client'
 
-import { Flexbox } from '@/components/common/Box/Box'
+import { Flexbox } from '@/components/common/FlexBox/FlexBox'
 import StyledHeader from './Header.style'
 import Link from 'next/link'
 import MenuIcon from '@mui/icons-material/Menu'
-import { Desktop, Laptop, Mobile, Tablet } from '@/components/common/ResponsiveViews/ResponsiveViews'
-import { Button, Tooltip } from '@mui/material'
-import PersonIcon from '@mui/icons-material/Person'
+import { Desktop, Mobile } from '@/components/common/Responsive/ResponsiveViews'
+import { Button, FormControl, Input, Tooltip } from '@mui/material'
 import SquareIconBtn from '@/components/common/SquareIconBtn/SquareIconBtn'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import SearchIcon from '@mui/icons-material/Search'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
+import HomeSearchModal from '@/components/pages/(home)/HomeSearchModal'
+import { useModal } from '@/hooks/useModal'
+
 function Header() {
+  const { isOpen, openModal, closeModal } = useModal()
+
   return (
     <StyledHeader>
       <Flexbox alignItems="center" justifyContent="space-between">
@@ -25,9 +29,28 @@ function Header() {
 
         <div className="header-right">
           <Mobile>
-            <SquareIconBtn className="icon search" color="secondary" aria-label="search">
+            <SquareIconBtn onClick={openModal} className="icon search" color="secondary" aria-label="search">
               <SearchIcon />
             </SquareIconBtn>
+            <HomeSearchModal open={isOpen} onClose={closeModal}>
+              <div className="search-container">
+                <header className="search-header">
+                  <FormControl className="form">
+                    <Input className="search-input" />
+                  </FormControl>
+                  <Button className="modal-cancel-btn" onClick={closeModal}>
+                    ESC
+                  </Button>
+                </header>
+                <div>
+                  <div>백엔드</div>
+                  <div>프론트엔드</div>
+                  <div>데브옵스</div>
+                  <div>알고리즘</div>
+                  <div>CS</div>
+                </div>
+              </div>
+            </HomeSearchModal>
 
             <Tooltip title="GitHub repository">
               <SquareIconBtn className="icon git" color="secondary" aria-label="GitHub repository">
