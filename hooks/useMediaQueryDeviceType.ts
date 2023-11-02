@@ -1,5 +1,5 @@
 import customBreakpoints from '@/styles/breakpoints'
-import useMediaQuery from '@mui/material/useMediaQuery/useMediaQuery'
+import { useMediaQuery } from '@mui/material'
 
 export function useMediaQueryDeviceType() {
   const isMobileMedia = useMediaQuery(customBreakpoints.mobile)

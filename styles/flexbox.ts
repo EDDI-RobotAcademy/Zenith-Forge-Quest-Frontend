@@ -1,4 +1,5 @@
-import { assertUnreachable } from './assertUnreachable'
+import { css } from '@mui/material'
+import { assertUnreachable } from '../utils/assertUnreachable'
 
 type T_FlexboxValueOriginal = 'center' | 'flex-end' | 'flex-start' | 'space-around' | 'space-between' | 'stretch'
 
@@ -30,3 +31,19 @@ function flexValue(value: T_FlexboxValue) {
 }
 
 export default flexValue
+
+export function flexbox(jc: T_FlexboxValue = 'center', ai: T_FlexboxValue = 'center') {
+  return css`
+    display: flex;
+    align-items: ${flexValue(ai)};
+    justify-content: ${flexValue(jc)};
+  `
+}
+
+export function inlineFlexbox(jc: T_FlexboxValue = 'center', ai: T_FlexboxValue = 'center') {
+  return css`
+    display: inline-flex;
+    justify-content: ${flexValue(jc)};
+    align-items: ${flexValue(ai)};
+  `
+}

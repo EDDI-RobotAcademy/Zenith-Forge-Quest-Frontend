@@ -1,41 +1,49 @@
 'use client'
+import { flexbox } from '@/styles/flexbox'
+import { css } from '@mui/material'
 
 import { Modal, styled } from '@mui/material'
 
-const StyledHomeSearchModal = styled(Modal)(({ theme }) => ({
-  '.search-container': {
-    height: '100vh',
-    maxWidth: '768px',
-    backgroundColor: '#ffffff',
+const StyledHomeSearchModal = styled(Modal)(
+  ({ theme }) => css`
+  .search-container {
+    height: 100vh;
+    max-width: 768px;
+    background-color: #ffffff;
 
-    '.search-header': {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderBottom: '1px solid #dae2ed',
+    .search-header {
+      ${flexbox()}
+      border-bottom: 1px solid #dae2ed;
+      padding: 0px 8px;
 
-      '.form': {
-        width: '100%',
+      .form {
+        width: 100%;
 
-        '.search-input': {
-          width: '100%',
-          height: '48px',
-          padding: '0 16px',
-          margin: '16px 0',
-          border: 'none',
+        .search-input {
+          width: 100%;
+          height: 48px;
+          padding: 0 16px;
+          margin: 16px 0;
+          border: none;
         },
       },
 
-      'modal-cancel-btn': {
-        width: '64px',
-        height: '48px',
-        padding: '0',
-        margin: '16px 0',
-        border: '1px solid #dae2ed',
-        color: theme.palette.secondary.main,
+      .modal-cancel-btn {
+        min-width: 56px;
+        height: 40px;
+        border: 1px solid #dae2ed;
+        font-size: 12px;
+        border-radius: 12px;
+        background-color: #f6f6f6;
+        color: ${theme.palette.secondary.main};
+
+        &:hover: {
+          opacity: 0.8,
+        },
+
       },
     },
   },
-}))
-
+  `
+)
 export default StyledHomeSearchModal
