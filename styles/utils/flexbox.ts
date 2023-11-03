@@ -1,5 +1,5 @@
 import { css } from '@mui/material'
-import { assertUnreachable } from '../utils/assertUnreachable'
+import { assertUnreachable } from '../../utils/assertUnreachable'
 
 type T_FlexboxValueOriginal = 'center' | 'flex-end' | 'flex-start' | 'space-around' | 'space-between' | 'stretch'
 
@@ -32,6 +32,7 @@ function flexValue(value: T_FlexboxValue) {
 
 export default flexValue
 
+//* flexbox 정렬 -성빈-
 export function flexbox(jc: T_FlexboxValue = 'center', ai: T_FlexboxValue = 'center') {
   return css`
     display: flex;
@@ -40,10 +41,21 @@ export function flexbox(jc: T_FlexboxValue = 'center', ai: T_FlexboxValue = 'cen
   `
 }
 
+//* inline-flexbox 정렬 -성빈-
 export function inlineFlexbox(jc: T_FlexboxValue = 'center', ai: T_FlexboxValue = 'center') {
   return css`
     display: inline-flex;
     justify-content: ${flexValue(jc)};
     align-items: ${flexValue(ai)};
+  `
+}
+
+//* flex 열 방향 정렬 -성빈-
+export function columnFlexbox(jc: T_FlexboxValue = 'center', ai: T_FlexboxValue = 'center') {
+  return css`
+    display: flex;
+    flex-direction: column;
+    align-items: ${flexValue(ai)};
+    justify-content: ${flexValue(jc)};
   `
 }

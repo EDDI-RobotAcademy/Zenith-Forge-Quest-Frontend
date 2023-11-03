@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
-import StyledHomeCard from './HomeCard.style'
 import { Avatar, CardContent, CardMedia, Chip, IconButton, Typography } from '@mui/material'
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline'
 import ShareIcon from '@mui/icons-material/Share'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
 import { Flexbox } from '@/components/common/FlexBox/FlexBox'
+import StyledMainCard from './MainCard.style'
 
-function HomeCard() {
+function MainCard() {
   return (
-    <StyledHomeCard>
+    <StyledMainCard>
       <div className="card-top">
         <CardMedia sx={{ height: 200 }} image="/images/team-work-meeting-with-females.jpg" title="green iguana" />
       </div>
@@ -59,8 +59,8 @@ function HomeCard() {
           </Flexbox>
         </Flexbox>
       </CardContent>
-    </StyledHomeCard>
+    </StyledMainCard>
   )
 }
 
-export default HomeCard
+export default MainCard

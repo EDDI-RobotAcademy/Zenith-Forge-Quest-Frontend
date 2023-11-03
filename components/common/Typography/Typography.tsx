@@ -26,3 +26,6 @@ export const Subtitle1 = (props: TypographyProps) => <Typography variant="subtit
 export const Subtitle2 = (props: TypographyProps) => <Typography variant="subtitle2" component="h6" {...props} />
 export const Body1 = (props: TypographyProps) => <Typography variant="body1" component="p" {...props} />
 export const Body2 = (props: TypographyProps) => <Typography variant="body2" component="p" {...props} />
+export const Button = (props: TypographyProps) => <Typography variant="button" component="span" {...props} />
+export const Caption = (props: TypographyProps) => <Typography variant="caption" component="span" {...props} />
+export const Outline = (props: TypographyProps) => <Typography variant="overline" component="span" {...props} />

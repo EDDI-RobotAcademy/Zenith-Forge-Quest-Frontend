@@ -1,7 +1,7 @@
-import './globals.css'
+import ScrollToTop from '@/components/common/Button/ScrollToTopButton'
 import ReactQueryProvider from './reactQueryProvder'
 import ThemeRegistry from './registry'
-import { notoSansKR } from '@/styles/fonts'
+import { notoSansKR } from '@/styles/theme/fonts'
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -15,6 +15,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeRegistry options={{ key: 'mui' }}>
             <div id="root" />
             {children}
+            <ScrollToTop />
           </ThemeRegistry>
         </body>
       </html>

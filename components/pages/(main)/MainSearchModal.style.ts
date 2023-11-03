@@ -1,10 +1,10 @@
 'use client'
-import { flexbox } from '@/styles/flexbox'
+import { flexbox } from '@/styles/utils/flexbox'
 import { css } from '@mui/material'
 
 import { Modal, styled } from '@mui/material'
 
-const StyledHomeSearchModal = styled(Modal)(
+const StyledMainSearchModal = styled(Modal)(
   ({ theme }) => css`
   .search-container {
     height: 100vh;
@@ -46,4 +46,4 @@ const StyledHomeSearchModal = styled(Modal)(
   },
   `
 )
-export default StyledHomeSearchModal
+export default StyledMainSearchModal

@@ -1,4 +1,4 @@
-import flexValue, { T_FlexboxValue } from '@/styles/flexbox'
+import flexValue, { T_FlexboxValue } from '@/styles/utils/flexbox'
 import { Box, BoxProps as MuiBoxProps } from '@mui/material'
 
 /**

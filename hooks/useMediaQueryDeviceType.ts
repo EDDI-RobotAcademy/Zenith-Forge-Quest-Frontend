@@ -1,4 +1,4 @@
-import customBreakpoints from '@/styles/breakpoints'
+import customBreakpoints from '@/styles/theme/breakpoints'
 import { useMediaQuery } from '@mui/material'
 
 export function useMediaQueryDeviceType() {

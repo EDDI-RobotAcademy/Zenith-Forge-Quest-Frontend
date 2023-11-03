@@ -1,4 +1,7 @@
+import customBreakpoints from './breakpoints'
 import theme from './theme'
+
+export type T_TextStyle = 'header' | 'subtitle' | 'body' | 'caption' | 'button' | 'overline'
 
 const h1 = {
   fontSize: theme.typography.h1.fontSize,
@@ -100,7 +103,7 @@ export const headers = {
   6: h6,
 }
 
-export const boides = {
+export const bodies = {
   1: body1,
   2: body2,
 }

@@ -10,7 +10,7 @@ import SquareIconBtn from '@/components/common/SquareIconBtn/SquareIconBtn'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import SearchIcon from '@mui/icons-material/Search'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
-import HomeSearchModal from '@/components/pages/(home)/HomeSearchModal'
+import HomeSearchModal from '@/components/pages/(main)/MainSearchModal'
 import { useModal } from '@/hooks/useModal'
 
 function Header() {
