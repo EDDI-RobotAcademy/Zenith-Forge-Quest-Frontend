@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+'use client'
+
+import { useEffect } from 'react'
 
 /**
  * * 컴포넌트가 마운트될 때에만 주어진 콜백 함수를 실행.
@@ -7,6 +9,6 @@ import { useEffect } from "react";
  */
 export function useMount(fn: () => void) {
   useEffect(() => {
-    fn();
-  }, []);
+    fn()
+  }, [])
 }
