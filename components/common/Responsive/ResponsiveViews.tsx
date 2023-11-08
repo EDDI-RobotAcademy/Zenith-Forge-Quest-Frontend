@@ -20,10 +20,20 @@ const responsiveViews = (predicate: (responsive: ReturnType<typeof useResponsive
   return Component
 }
 
+//* 모바일 환경에서만 보임 - 성빈 -
 export const Mobile = responsiveViews(({ isMobile }) => isMobile, 'Mobile')
 
+//* 태블릿 환경에서만 보임 - 성빈 -
 export const Tablet = responsiveViews(({ isTablet }) => isTablet, 'Tablet')
 
+//* 랩탑 환경에서만 보임 - 성빈 -
 export const Laptop = responsiveViews(({ isLaptop }) => isLaptop, 'Laptop')
 
+//* 데스크톱 환경에서만 보임 - 성빈 -
 export const Desktop = responsiveViews(({ isDesktop }) => isDesktop, 'Desktop')
+
+//* 모바일 또는 태블릿 환경에서만 보임 - 성빈 -
+export const MobileOrTablet = responsiveViews(({ isMobileOrTablet }) => isMobileOrTablet, 'isMobileOrTablet')
+
+//* 태블릿 또는 데스크탑 환경에서만 보임 - 성빈 -
+export const TabletOrDesktop = responsiveViews(({ isTabletOrDesktop }) => isTabletOrDesktop, 'isTabletOrDesktop')
