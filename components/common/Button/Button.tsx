@@ -1,11 +1,14 @@
-import Button, { ButtonProps as MuiButtonProps } from "@mui/material/Button";
+import { ButtonProps as MuiButtonProps } from '@mui/material/Button'
+import { StyledButton } from './Button.style'
 
-interface ButtonProps extends MuiButtonProps {
-  children?: React.ReactNode;
+interface I_ButtonProps extends MuiButtonProps {
+  children?: React.ReactNode
+  disabled?: boolean
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-function CommonButton({ children, ...props }: ButtonProps) {
-  return <Button {...props}>{children}</Button>;
+function Button({ children, ...props }: I_ButtonProps) {
+  return <StyledButton {...props}>{children}</StyledButton>
 }
 
-export default CommonButton;
+export default Button
