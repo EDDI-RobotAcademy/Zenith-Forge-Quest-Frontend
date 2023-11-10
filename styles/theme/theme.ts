@@ -1,6 +1,8 @@
 import { createTheme } from '@mui/material'
 import { notoSansKR } from './fonts'
+import { basePalette } from './colors'
 
+//* 반응형 브레이크 포인트 값
 const breakpoints = {
   mobile: 0,
   tablet: 768,
@@ -14,6 +16,9 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: notoSansKR as any, //* 일단 애니로 처리
+  },
+  palette: {
+    ...basePalette,
   },
 })
 
