@@ -5,11 +5,12 @@ import StyledHeader from './Header.style'
 import Link from 'next/link'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Mobile, TabletOrDesktop } from '@/components/common/Responsive/ResponsiveViews'
-import { Button, Tooltip } from '@mui/material'
 import SquareIconBtn from '@/components/common/SquareIconBtn/SquareIconBtn'
 import SearchIcon from '@mui/icons-material/Search'
 import { useModal } from '@/hooks/useModal'
 import HeaderSearchButton from './HeaderSearchButton'
+import Button from '@/components/common/Button/Button'
+import Tooltip from '@/components/common/Tooltip/Tooltip'
 
 function Header() {
   const { isOpen, openModal, closeModal } = useModal()
@@ -39,12 +40,12 @@ function Header() {
 
         <div className="header-right">
           <Mobile>
-            <SquareIconBtn onClick={openModal} className="icon search" color="secondary" aria-label="search">
+            <SquareIconBtn onClick={openModal} className="icon search" color="primary" aria-label="search">
               <SearchIcon />
             </SquareIconBtn>
 
             <Tooltip title="Menu button">
-              <SquareIconBtn className="icon menu" color="secondary" aria-label="menu">
+              <SquareIconBtn className="icon menu" color="primary" aria-label="menu">
                 <MenuIcon />
               </SquareIconBtn>
             </Tooltip>
@@ -53,10 +54,10 @@ function Header() {
           <TabletOrDesktop>
             <div className="user-btn-container">
               <HeaderSearchButton />
-              <Button className="login-btn" size="small" color="secondary" variant="contained">
+              <Button className="login-btn" size="small" color="primary" variant="contained">
                 로그인
               </Button>
-              <Button className="signup-btn" size="small" color="secondary" variant="outlined">
+              <Button className="signup-btn" size="small" color="primary" variant="outlined">
                 회원가입
               </Button>
             </div>
