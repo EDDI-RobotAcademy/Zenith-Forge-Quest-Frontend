@@ -3,3 +3,5 @@ export type T_ModalState = {
   openModal: () => void
   closeModal: () => void
 }
+
+export type T_CategoryType = 'Frontend' | 'Backend' | 'DevOps' | 'Design' | 'Career'

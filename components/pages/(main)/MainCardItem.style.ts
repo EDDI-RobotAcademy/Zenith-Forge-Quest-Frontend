@@ -1,10 +1,13 @@
 'use client'
+import customBreakpoints from '@/styles/theme/breakpoints'
 import { neutralColor } from '@/styles/theme/colors'
+import { ellipsis } from '@/styles/utils/ellipsis'
+import { flexbox } from '@/styles/utils/flexbox'
 import { Card, css, styled } from '@mui/material'
 
 const MUI_AVATAR_ROOT = 24
 
-const StyledMainCard = styled(Card)(
+const StyledMainCardItem = styled(Card)(
   ({ theme }) => css`
     width: 100%;
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -19,26 +22,31 @@ const StyledMainCard = styled(Card)(
       padding: 16px;
 
       .card {
-        margin-bottom: 16px;
-
         &.title {
+          ${flexbox('between')}
           font-size: 18px;
+
+          .title-container {
+            width: calc(100% - 116px);
+          }
+
+          .main-card-img {
+            width: 96px;
+            height: 96px;
+            border-radius: 12px;
+          }
         }
 
         &.contents {
           font-size: 14px;
-          a {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
-            overflow: hidden;
-            font-size: 14px;
-          }
         }
 
-        .anchor-under {
-          &:hover {
-            text-decoration: underline;
+        .title-anchor {
+          margin-bottom: 8px;
+          .anchor-under {
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -48,6 +56,7 @@ const StyledMainCard = styled(Card)(
         height: ${MUI_AVATAR_ROOT}px;
         margin-right: 8px;
       }
+
       .MuiTypography-root {
         font-size: 12px;
         color: ${neutralColor.dark1}; // #D0C9D6
@@ -82,7 +91,23 @@ const StyledMainCard = styled(Card)(
         }
       }
     }
+
+    ${customBreakpoints.tablet} {
+      .card-contents {
+        .card {
+          margin-bottom: 8px;
+
+          &.title {
+            .main-card-img {
+              width: 216px;
+              height: 216px;
+              border-radius: 12px;
+            }
+          }
+        }
+      }
+    }
   `
 )
 
-export default StyledMainCard
+export default StyledMainCardItem
