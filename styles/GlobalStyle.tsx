@@ -1,5 +1,6 @@
 import { GlobalStyles, css } from '@mui/material'
 import { notoSansKR } from './theme/fonts'
+import { neutralColor } from './theme/colors'
 
 const globalStyles = (
   <GlobalStyles
@@ -7,7 +8,7 @@ const globalStyles = (
       * {
         margin: 0;
         box-sizing: border-box;
-        font-family: ${notoSansKR}
+        font-family: ${notoSansKR};
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
       }
@@ -21,7 +22,7 @@ const globalStyles = (
         width: 100%;
         max-width: 100vw;
         height: 100vh;
-        position: relative;
+        background-color: ${neutralColor.background};
 
         ::-webkit-scrollbar {
           width: 12px;
