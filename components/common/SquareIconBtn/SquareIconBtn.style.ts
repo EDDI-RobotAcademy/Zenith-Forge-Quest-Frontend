@@ -1,3 +1,5 @@
+'use client'
+
 import { IconButton, styled } from '@mui/material'
 
 const StyledSquareIconBtn = styled(IconButton)(({ theme }) => ({

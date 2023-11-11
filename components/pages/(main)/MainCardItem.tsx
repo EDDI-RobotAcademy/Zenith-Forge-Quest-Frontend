@@ -7,44 +7,50 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline'
 import ShareIcon from '@mui/icons-material/Share'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
 import { Flexbox } from '@/components/common/FlexBox/FlexBox'
-import StyledMainCard from './MainCard.style'
 import Chip from '@/components/common/Chip/Chip'
 import SquareIconBtn from '@/components/common/SquareIconBtn/SquareIconBtn'
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder'
 import Tooltip from '@/components/common/Tooltip/Tooltip'
+import StyledMainCardItem from './MainCardItem.style'
+import { TabletOrDesktop } from '@/components/common/Responsive/ResponsiveViews'
+import Image from '@/components/common/Image/Image'
 import { M_Main } from '@/types/model/main'
 import useCategoryToColor from '@/hooks/useCategoryToColor'
 
-function MainCard({ title, category, content, imageSrc, author, minute, hour }: M_Main.I_MainData) {
+function MainCardItem({ title, category, content, imageSrc, author, minute, hour }: M_Main.I_MainData) {
   const categoryToColor = useCategoryToColor()
 
   return (
-    <StyledMainCard>
-      <div className="card-top">
-        <CardMedia sx={{ height: 200 }} image={imageSrc} title="green iguana" />
-      </div>
+    <StyledMainCardItem>
       <CardContent className="card-contents">
         <div className="card category">
           <Chip href="/" size="small" label={category} color={categoryToColor(category as any) as any} />
         </div>
         <div className="card title">
-          <Link className="anchor-under" href="/">
-            {title}
-          </Link>
-        </div>
+          <div className="title-container">
+            <div className="title-anchor">
+              <Link className="anchor-under" href="/">
+                {title}
+              </Link>
+            </div>
 
-        <div className="card contents">
-          <Link className="anchor-under" href="/">
-            {content}
-          </Link>
-        </div>
+            <TabletOrDesktop>
+              <div className="card contents">
+                <Link className="anchor-under" href="/">
+                  {content}
+                </Link>
+              </div>
+            </TabletOrDesktop>
+            <Flexbox justifyContent="inherit">
+              <Avatar>
+                <InsertEmoticonIcon fontSize="small" />
+              </Avatar>
+              <Typography>{author}</Typography>
+            </Flexbox>
+          </div>
 
-        <Flexbox justifyContent="inherit">
-          <Avatar>
-            <InsertEmoticonIcon fontSize="small" />
-          </Avatar>
-          <Typography>{author}</Typography>
-        </Flexbox>
+          <Image src={imageSrc} alt="test" className="main-card-img" />
+        </div>
       </CardContent>
 
       <CardContent className="card-footer">
@@ -75,8 +81,8 @@ function MainCard({ title, category, content, imageSrc, author, minute, hour }: 
           </Flexbox>
         </Flexbox>
       </CardContent>
-    </StyledMainCard>
+    </StyledMainCardItem>
   )
 }
 
-export default MainCard
+export default MainCardItem

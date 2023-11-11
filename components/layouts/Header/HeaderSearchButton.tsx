@@ -5,7 +5,7 @@ import { Body2, Caption, Outline } from '@/components/common/Typography/Typograp
 
 function HeaderSearchButton() {
   return (
-    <StyledHeaderSearchButton color="secondary">
+    <StyledHeaderSearchButton color="primary">
       <SearchIcon />
       <Body2>검색</Body2>
     </StyledHeaderSearchButton>

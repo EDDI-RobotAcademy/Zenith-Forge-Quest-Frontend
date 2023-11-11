@@ -1,3 +1,5 @@
+'use client'
+
 import { useMediaQueryDeviceType } from '@/hooks/useMediaQueryDeviceType'
 import { Box, BoxProps as MuiBoxProps } from '@mui/material'
 
@@ -25,7 +27,7 @@ type T_HiddenBoxProps = {
 
 const withVisibility = (
   predicate: (mediaType: ReturnType<typeof useMediaQueryDeviceType>) => boolean,
-  name: string
+  name: string,
 ) => {
   const Component = ({ children, className, component }: T_HiddenBoxProps) => {
     const mediaType = useMediaQueryDeviceType()
