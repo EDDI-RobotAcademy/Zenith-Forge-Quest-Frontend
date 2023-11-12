@@ -50,7 +50,7 @@ jobs:
     - name: Build
       run: |
         npm run build
-        ls
+        ls -a
         
     - name: Add Github Actions IP to Security group
       run: |
