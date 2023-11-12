@@ -63,7 +63,7 @@ jobs:
         username: ec2-user
         key: ${{ secrets.PRIVATE_KEY }}
         source: "./.next/*"
-        target: "/home/ec2-user/actions/cafe-react-next-actions"
+        target: "/home/ec2-user/tmp-deploy/cafe-react-next-frontend"
         
     - name: Remove Github Actions IP From Security Group
       run: |
@@ -72,7 +72,7 @@ jobs:
   deploy:
     needs: build
     name: Deploy
-    runs-on: [ self-hosted, deploy-frontend ]
+    runs-on: [ self-hosted, deploy-zenith-forge-quest-frontend ]
     steps:  
       - name: Deploy to prod
         uses: appleboy/ssh-action@v0.1.10
@@ -83,7 +83,7 @@ jobs:
           script_stop: true
           script: |
             cd cafe-react-next-frontend
-            cp -r ~/actions/cafe-react-next-actions/.next/* ./html/
+            cp -r ~/tmp-deploy/cafe-react-next-frontend/.next/* ./html/
 
             docker image prune -f
             docker logout
