@@ -62,7 +62,7 @@ jobs:
         host: ${{ secrets.PUBLIC_IP }}
         username: ec2-user
         key: ${{ secrets.PRIVATE_KEY }}
-        source: "./.next/*"
+        source: "./out/*"
         target: "/home/ec2-user/tmp-deploy/cafe-react-next-frontend"
         
     - name: Remove Github Actions IP From Security Group
@@ -83,7 +83,7 @@ jobs:
           script_stop: true
           script: |
             cd cafe-react-next-frontend
-            cp -r ~/tmp-deploy/cafe-react-next-frontend/.next/* ./html/
+            cp -r ~/tmp-deploy/cafe-react-next-frontend/out/* ./html/
 
             docker image prune -f
             docker logout
