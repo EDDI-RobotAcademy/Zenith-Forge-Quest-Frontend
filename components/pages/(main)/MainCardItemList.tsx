@@ -3,19 +3,22 @@
 import React from 'react'
 import MainCardItem from './MainCardItem'
 import MainCard from './MainCard'
-import { StyledMainCardItemList } from './MainCardItemList.style'
+import { StyledMainCardItemList } from './styled'
 
 const fakeData = [
   {
+    mainCardNo: 1,
     category: 'Design',
     title: '프론트엔드 개발자가 왜 이걸 해야하나',
-    content: '업계 아티클을 즐겨 보시는 분이라면 디자이너의 커뮤니케이션에 대한 글을 심심치 않게 보셨을 겁니다.',
+    content:
+      '업계 아티클을 즐겨 보시는 분이라면 디자이너의 커뮤니케이션에 대한 글을 심심치 않게 보셨을 겁니다. 아아아 하입보이 퇴근하고싶고 집에가고싶고 원래 이런건가 싶고 퍼블리싱 재미없고 근데 솔직히 이번꺼 너무 망햇고 그냥해보고 리팩토링해야지 누가좀 ui좀 만들어줘 나도 성능 이런거 해보고싶어어어어어엉 오랜만에 반응형하니까 머리아파,,,,,,, 디자인도없이 하니까 더아파,,,,,,,, 머리아파아 아아아아 얼마나 길어지는지 보자 7줄만 나와야해 계속 키보드를 쳐보자 7줄이 나의 마지노선이다아아아아 징동 아웃! 뉴진스 나와! T1~~~~~~~~~~~~~~~~~~~~ 한줄만 더 길어지면 될거같다.. 곧 12월 우어어어어어어어어어어어어어어어아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ',
     imageSrc: '/images/team-work-meeting-with-females.jpg',
     author: '박성빈',
     hour: '5시간 전',
     minute: '10분',
   },
   {
+    mainCardNo: 2,
     category: 'Backend',
     title: '스레드를 많이 쓸수록 항상 성능이 좋아질까?',
     content: '업계 아티클을 즐겨 보시는 분이라면 디자이너의 커뮤니케이션에 대한 글을 심심치 않게 보셨을 겁니다.',
@@ -25,6 +28,7 @@ const fakeData = [
     minute: '20분',
   },
   {
+    mainCardNo: 3,
     category: 'DevOps',
     title: '자바스크립트 이벤트 루프 동작 구조 & 원리 끝판왕',
     content:
@@ -35,6 +39,7 @@ const fakeData = [
     minute: '30분',
   },
   {
+    mainCardNo: 4,
     category: 'Career',
     title: '연봉을 많이 받고 싶은 사람!?',
     content: '연봉이냐 워라밸이냐 그것이 문제로다 인쉥은 언제나 고민 ',
@@ -48,28 +53,32 @@ const fakeData = [
 function MainCardItemList() {
   return (
     <StyledMainCardItemList>
-      <MainCard
-        category={fakeData[0].category}
-        title={fakeData[0].title}
-        content={fakeData[0].content}
-        imageSrc={fakeData[0].imageSrc}
-        author={fakeData[0].author}
-        hour={fakeData[0].hour}
-        minute={fakeData[0].minute}
-      />
-
-      {fakeData.slice(1).map((item, index) => (
-        <MainCardItem
-          key={index}
-          category={item.category}
-          title={item.title}
-          content={item.content}
-          imageSrc={item.imageSrc}
-          author={item.author}
-          hour={item.hour}
-          minute={item.minute}
+      <div className="main-card">
+        <MainCard
+          category={fakeData[0].category}
+          title={fakeData[0].title}
+          content={fakeData[0].content}
+          imageSrc={fakeData[0].imageSrc}
+          author={fakeData[0].author}
+          hour={fakeData[0].hour}
+          minute={fakeData[0].minute}
         />
-      ))}
+      </div>
+
+      <div className="main-sub-list">
+        {fakeData.slice(1).map((item) => (
+          <MainCardItem
+            key={item.mainCardNo}
+            category={item.category}
+            title={item.title}
+            content={item.content}
+            imageSrc={item.imageSrc}
+            author={item.author}
+            hour={item.hour}
+            minute={item.minute}
+          />
+        ))}
+      </div>
     </StyledMainCardItemList>
   )
 }

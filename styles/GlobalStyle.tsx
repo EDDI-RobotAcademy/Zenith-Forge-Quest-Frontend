@@ -1,6 +1,7 @@
 import { GlobalStyles, css } from '@mui/material'
 import { notoSansKR } from './theme/fonts'
 import { neutralColor } from './theme/colors'
+import theme from './theme/theme'
 
 const globalStyles = (
   <GlobalStyles
@@ -88,6 +89,11 @@ const globalStyles = (
         clip: rect(0, 0, 0, 0) !important;
         white-space: nowrap !important;
         border: 0 !important;
+      }
+
+      ::selection {
+        color: #ffffff;
+        background-color: ${theme.palette.primary.dark}; // #6979F8
       }
     `}
   />

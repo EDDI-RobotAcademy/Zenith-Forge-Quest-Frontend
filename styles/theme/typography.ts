@@ -1,4 +1,3 @@
-import customBreakpoints from './breakpoints'
 import theme from './theme'
 
 export type T_TextStyle = 'header' | 'subtitle' | 'body' | 'caption' | 'button' | 'overline'
