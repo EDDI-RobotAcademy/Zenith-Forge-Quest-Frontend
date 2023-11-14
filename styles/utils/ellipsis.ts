@@ -15,3 +15,12 @@ export function ellipsis(): SerializedStyles {
     white-space: nowrap;
   `
 }
+
+export function ellipsisLineClamp(lines: number = 1): SerializedStyles {
+  return css`
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: ${lines};
+    overflow: hidden;
+  `
+}
