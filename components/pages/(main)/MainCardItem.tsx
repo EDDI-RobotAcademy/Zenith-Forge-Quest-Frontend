@@ -30,17 +30,17 @@ function MainCardItem({ title, category, content, imageSrc, author, minute, hour
             <Flexbox className="card-icon">
               <Tooltip title="댓글">
                 <SquareIconBtn className="chat-icon" aria-label="chat">
-                  <ChatBubbleOutlineIcon />
+                  <ChatBubbleOutlineIcon color="primary" />
                 </SquareIconBtn>
               </Tooltip>
               <Tooltip title="공유하기">
                 <SquareIconBtn className="share-icon" aria-label="share">
-                  <ShareIcon />
+                  <ShareIcon color="primary" />
                 </SquareIconBtn>
               </Tooltip>
               <Tooltip title="스크랩">
                 <SquareIconBtn className="bookmark-icon" aria-label="share">
-                  <BookmarkBorderIcon />
+                  <BookmarkBorderIcon color="primary" />
                 </SquareIconBtn>
               </Tooltip>
             </Flexbox>

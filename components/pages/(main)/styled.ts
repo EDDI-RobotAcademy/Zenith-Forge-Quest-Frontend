@@ -4,7 +4,7 @@ import { neutralColor } from '@/styles/theme/colors'
 import { ellipsisLineClamp } from '@/styles/utils/ellipsis'
 import { flexbox } from '@/styles/utils/flexbox'
 import { textStyle } from '@/utils/text'
-import { Card, css, styled, Box, Grid } from '@mui/material'
+import { Card, css, styled, Box, Grid, List } from '@mui/material'
 
 const MUI_AVATAR_ROOT = 24
 const MAIN_CARD_BORDER_RADIUS = 12
@@ -21,21 +21,24 @@ export const StyledMainPageContainer = styled(Grid)(
       margin-bottom: ${MAIN_CARD_MARGIN * 3}px;
     }
 
-    .main-section-first {
-      ${flexbox('space-between')}
-      margin-bottom: ${MAIN_CARD_MARGIN * 3}px;
-
+    .main-section {
       .section-header {
-        font-weight: 400;
-      }
+        ${flexbox('space-between')}
+        margin-bottom: ${MAIN_CARD_MARGIN * 2}px;
 
-      .section-link {
-        display: flex;
+        .title {
+          color: ${neutralColor.dark3}; // #1A051D
+          font-weight: 600;
+        }
 
         .show-more-text {
-          ${textStyle('body', 1)}
-          font-weight: 600;
-          color: ${theme.palette.secondary.main}; // #BE52F2
+          .text {
+            color: ${theme.palette.primary.dark}; // #6979F8
+            font-weight: 600;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
         }
       }
     }
@@ -69,136 +72,18 @@ export const StyledMainCardItemList = styled(Box)(
   `
 )
 
-//* Main Card
-export const StyledMainCard = styled(Card)(
+export const StyledMainSection = styled(Box)(
   ({ theme }) => css`
-    width: 100%;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    border: 1px solid ${neutralColor.white2}; // #F7F5F9
-    border-radius: ${MAIN_CARD_BORDER_RADIUS}px;
-
-    &:hover {
-      box-shadow: 0px 4px 16px ${neutralColor.white3}; // #ECE9F1
-    }
-
-    .card-header {
-      .MuiCardHeader-avatar {
-        width: 100%;
-      }
-      .card-header-container {
-        width: 100%;
-        justify-content: space-between;
-
-        .card-icon {
-          .chat-icon,
-          .share-icon {
-            margin-right: ${MAIN_CARD_MARGIN}px;
-          }
-        }
-      }
-    }
-
-    .card-top {
-      padding: 0 ${MAIN_CARD_PADDING * 2}px;
-      .card-media-container {
-        height: 196px;
-        border-radius: ${MAIN_CARD_BORDER_RADIUS}px;
-      }
-    }
-
-    .card-contents {
-      padding: ${MAIN_CARD_PADDING * 2}px;
-
-      .card {
-        margin-bottom: ${MAIN_CARD_MARGIN * 2}px;
-
-        &.title {
-          ${textStyle('header', 5)}
-        }
-
-        &.contents {
-          a {
-            ${textStyle('body', 2)}
-            ${ellipsisLineClamp(3)}
-          }
-        }
-
-        .anchor-under {
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-
-      .card-time {
-        ${textStyle('body', 2)}
-        margin-bottom: ${MAIN_CARD_MARGIN * 2}px;
-
-        .MuiSvgIcon-root {
-          margin-top: 2px;
-        }
-
-        .minute {
-          margin-left: 4px;
-          margin-right: 4px;
-        }
-
-        .hours {
-          margin-left: 4px;
-        }
-      }
-    }
-
-    .card-bottom {
-      padding: ${MAIN_CARD_PADDING * 2}px;
-
-      .MuiAvatar-root {
-        width: ${MUI_AVATAR_ROOT}px;
-        height: ${MUI_AVATAR_ROOT}px;
-        margin-right: ${MAIN_CARD_MARGIN}px;
-      }
-
-      .author {
-        ${textStyle('caption', 1)};
-        color: ${neutralColor.dark1}; // #D0C9D6
-      }
-    }
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(1, 1fr);
 
     ${customBreakpoints.tablet} {
-      .card-top {
-        .card-media-container {
-          height: 280px;
-        }
-      }
+      grid-template-columns: repeat(2, 1fr);
     }
 
     ${customBreakpoints.desktop} {
-      .card-header {
-        .card-header-container {
-          .card-icon {
-            .chat-icon,
-            .share-icon {
-              margin-right: ${MAIN_CARD_MARGIN * 2}px;
-            }
-          }
-        }
-      }
-
-      .card-contents {
-        height: 392px;
-
-        .card {
-          &.contents {
-            a {
-              ${textStyle('body', 1)}
-              ${ellipsisLineClamp(10)}
-            }
-          }
-        }
-      }
-      .card-bottom {
-        padding-bottom: ${MAIN_CARD_PADDING * 2}px !important;
-      }
+      grid-template-columns: repeat(3, 1fr);
     }
   `
 )
@@ -234,6 +119,7 @@ export const StyledMainCardItem = styled(Card)(
 
     .card-time {
       ${textStyle('body', 2)}
+      color: ${neutralColor.dark2};
       margin-bottom: ${MAIN_CARD_MARGIN * 2}px;
 
       .MuiSvgIcon-root {
@@ -278,9 +164,13 @@ export const StyledMainCardItem = styled(Card)(
 
         &.contents {
           ${textStyle('body', 2)}
+          color: ${neutralColor.dark3}; // #1A051D
         }
 
         .title-anchor {
+          color: ${neutralColor.dark3}; // #1A051D
+          font-weight: 600;
+
           margin-bottom: ${MAIN_CARD_MARGIN / 4}px;
           .anchor-under {
             &:hover {
@@ -359,7 +249,6 @@ export const StyledMainCardItem = styled(Card)(
         .card {
           &.title {
             ${textStyle('header', 6)}
-
             .main-card-img {
               width: 200px;
               height: 120px;
@@ -371,6 +260,43 @@ export const StyledMainCardItem = styled(Card)(
       .card-bottom {
         padding: ${MAIN_CARD_PADDING * 2}px;
         padding-top: 0;
+      }
+    }
+  `
+)
+
+//* MainList
+export const StyledMainListItem = styled(List)(
+  ({ theme }) => css`
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .raking-list-item {
+      width: inherit;
+      padding-left: 0;
+      padding-right: 0;
+
+      .square-ranking {
+        ${flexbox()}
+        ${textStyle('body', 2)}
+        width: 32px;
+        height: 32px;
+        font-weight: 600;
+        margin-right: 8px;
+        border-radius: 12px;
+        color: ${theme.palette.primary.dark}; // #6979F8
+        background-color: ${neutralColor.white3}; //* #ECE9F1
+
+        &.top {
+          color: ${neutralColor.white1}; // #FFFFFF
+          background-color: ${theme.palette.primary.dark}; // #6979F8
+        }
+      }
+    }
+
+    .MuiListItemText-root {
+      .MuiTypography-root {
       }
     }
   `

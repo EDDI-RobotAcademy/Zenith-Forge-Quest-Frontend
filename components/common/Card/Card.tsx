@@ -1,44 +1,58 @@
-'use client'
-
+import { Avatar, CardContent, CardHeader, CardMedia } from '@mui/material'
+import { StyledCard, T_CardSize } from './Card.style'
+import { Flexbox } from '../FlexBox/FlexBox'
+import Chip from '../Chip/Chip'
+import Tooltip from '../Tooltip/Tooltip'
+import SquareIconBtn from '../SquareIconBtn/SquareIconBtn'
+import useCategoryToColor from '@/hooks/useCategoryToColor'
 import Link from 'next/link'
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
-import { Avatar, CardContent, CardHeader, CardMedia, IconButton, Typography } from '@mui/material'
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline'
 import ShareIcon from '@mui/icons-material/Share'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
-import { Flexbox } from '@/components/common/FlexBox/FlexBox'
-import Chip from '@/components/common/Chip/Chip'
-import SquareIconBtn from '@/components/common/SquareIconBtn/SquareIconBtn'
+import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder'
-import Tooltip from '@/components/common/Tooltip/Tooltip'
-import { M_Main } from '@/types/model/main'
-import useCategoryToColor from '@/hooks/useCategoryToColor'
-import { StyledMainCard } from './styled'
+import { neutralColor } from '@/styles/theme/colors'
 
-function MainCard({ title, category, content, imageSrc, author, minute, hour }: M_Main.I_MainData) {
+type T_CardProps = {
+  category: string
+  title: string
+  content: string
+  imageSrc: string
+  author: string
+  minute: string
+  hour: string
+  $size?: T_CardSize
+}
+
+function Card({ category, title, content, imageSrc, author, minute, hour, $size = 'lg' }: T_CardProps) {
   const categoryToColor = useCategoryToColor()
 
   return (
-    <StyledMainCard>
+    <StyledCard $size={$size}>
       <CardHeader
         className="card-header"
         avatar={
           <Flexbox className="card-header-container">
-            <Chip href="/" size="medium" label={category} color={categoryToColor(category as any) as any} />
+            <Chip
+              href="/"
+              size={$size === 'sm' ? 'small' : 'medium'}
+              label={category}
+              color={categoryToColor(category as any) as any}
+            />
             <Flexbox className="card-icon">
               <Tooltip title="댓글">
                 <SquareIconBtn className="chat-icon" aria-label="chat">
-                  <ChatBubbleOutlineIcon />
+                  <ChatBubbleOutlineIcon fontSize={$size === 'sm' ? 'small' : 'medium'} color="primary" />
                 </SquareIconBtn>
               </Tooltip>
               <Tooltip title="공유하기">
                 <SquareIconBtn className="share-icon" aria-label="share">
-                  <ShareIcon />
+                  <ShareIcon fontSize={$size === 'sm' ? 'small' : 'medium'} color="primary" />
                 </SquareIconBtn>
               </Tooltip>
               <Tooltip title="스크랩">
                 <SquareIconBtn className="bookmark-icon" aria-label="share">
-                  <BookmarkBorderIcon />
+                  <BookmarkBorderIcon fontSize={$size === 'sm' ? 'small' : 'medium'} color="primary" />
                 </SquareIconBtn>
               </Tooltip>
             </Flexbox>
@@ -55,7 +69,7 @@ function MainCard({ title, category, content, imageSrc, author, minute, hour }: 
             {title}
           </Link>
         </div>
-        <Flexbox className="card-time" justifyContent="inherit">
+        <Flexbox className="card time" justifyContent="inherit">
           <AccessTimeIcon fontSize="small" />
           <p className="minute">{minute}</p>
           <p className="">|</p>
@@ -77,8 +91,8 @@ function MainCard({ title, category, content, imageSrc, author, minute, hour }: 
           <p className="author">{author}</p>
         </Flexbox>
       </CardContent>
-    </StyledMainCard>
+    </StyledCard>
   )
 }
 
-export default MainCard
+export default Card
