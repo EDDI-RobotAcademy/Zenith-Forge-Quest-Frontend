@@ -28,21 +28,21 @@ function MainCardItem({ title, category, content, imageSrc, author, minute, hour
           <Flexbox className="card-header-container">
             <Chip href="/" size="medium" label={category} color={categoryToColor(category as any) as any} />
             <Flexbox className="card-icon">
-              <Tooltip title="댓글">
-                <SquareIconBtn className="chat-icon" aria-label="chat">
-                  <ChatBubbleOutlineIcon color="primary" />
-                </SquareIconBtn>
-              </Tooltip>
-              <Tooltip title="공유하기">
-                <SquareIconBtn className="share-icon" aria-label="share">
-                  <ShareIcon color="primary" />
-                </SquareIconBtn>
-              </Tooltip>
-              <Tooltip title="스크랩">
-                <SquareIconBtn className="bookmark-icon" aria-label="share">
-                  <BookmarkBorderIcon color="primary" />
-                </SquareIconBtn>
-              </Tooltip>
+              <SquareIconBtn className="chat-icon" aria-label="chat">
+                <Tooltip title="댓글" placement="top">
+                  <ChatBubbleOutlineIcon />
+                </Tooltip>
+              </SquareIconBtn>
+              <SquareIconBtn className="share-icon" aria-label="share">
+                <Tooltip title="공유하기" placement="top">
+                  <ShareIcon />
+                </Tooltip>
+              </SquareIconBtn>
+              <SquareIconBtn className="bookmark-icon" aria-label="share">
+                <Tooltip title="스크랩" placement="top">
+                  <BookmarkBorderIcon />
+                </Tooltip>
+              </SquareIconBtn>
             </Flexbox>
           </Flexbox>
         }
@@ -77,7 +77,7 @@ function MainCardItem({ title, category, content, imageSrc, author, minute, hour
       <CardContent className="card-bottom">
         <Flexbox justifyContent="inherit">
           <Avatar>
-            <InsertEmoticonIcon fontSize="small" />
+            <InsertEmoticonIcon color="action" fontSize="small" />
           </Avatar>
           <Typography>{author}</Typography>
         </Flexbox>

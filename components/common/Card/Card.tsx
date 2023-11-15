@@ -1,17 +1,14 @@
-import { Avatar, CardContent, CardHeader, CardMedia } from '@mui/material'
+import { Avatar, CardContent, CardHeader, CardMedia, Tooltip } from '@mui/material'
 import { StyledCard, T_CardSize } from './Card.style'
 import { Flexbox } from '../FlexBox/FlexBox'
 import Chip from '../Chip/Chip'
-import Tooltip from '../Tooltip/Tooltip'
 import SquareIconBtn from '../SquareIconBtn/SquareIconBtn'
 import useCategoryToColor from '@/hooks/useCategoryToColor'
-import Link from 'next/link'
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline'
 import ShareIcon from '@mui/icons-material/Share'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder'
-import { neutralColor } from '@/styles/theme/colors'
 
 type T_CardProps = {
   category: string
@@ -21,6 +18,7 @@ type T_CardProps = {
   author: string
   minute: string
   hour: string
+
   $size?: T_CardSize
 }
 
@@ -39,22 +37,23 @@ function Card({ category, title, content, imageSrc, author, minute, hour, $size 
               label={category}
               color={categoryToColor(category as any) as any}
             />
+
             <Flexbox className="card-icon">
-              <Tooltip title="댓글">
-                <SquareIconBtn className="chat-icon" aria-label="chat">
-                  <ChatBubbleOutlineIcon fontSize={$size === 'sm' ? 'small' : 'medium'} color="primary" />
-                </SquareIconBtn>
-              </Tooltip>
-              <Tooltip title="공유하기">
-                <SquareIconBtn className="share-icon" aria-label="share">
-                  <ShareIcon fontSize={$size === 'sm' ? 'small' : 'medium'} color="primary" />
-                </SquareIconBtn>
-              </Tooltip>
-              <Tooltip title="스크랩">
-                <SquareIconBtn className="bookmark-icon" aria-label="share">
-                  <BookmarkBorderIcon fontSize={$size === 'sm' ? 'small' : 'medium'} color="primary" />
-                </SquareIconBtn>
-              </Tooltip>
+              <SquareIconBtn className="chat-icon" aria-label="chat">
+                <Tooltip title="댓글" placement="top">
+                  <ChatBubbleOutlineIcon fontSize={$size === 'sm' ? 'small' : 'medium'} />
+                </Tooltip>
+              </SquareIconBtn>
+              <SquareIconBtn className="share-icon" aria-label="share">
+                <Tooltip title="공유하기" placement="top">
+                  <ShareIcon fontSize={$size === 'sm' ? 'small' : 'medium'} />
+                </Tooltip>
+              </SquareIconBtn>
+              <SquareIconBtn className="bookmark-icon" aria-label="share">
+                <Tooltip title="스크랩" placement="top">
+                  <BookmarkBorderIcon fontSize={$size === 'sm' ? 'small' : 'medium'} />
+                </Tooltip>
+              </SquareIconBtn>
             </Flexbox>
           </Flexbox>
         }
@@ -64,11 +63,7 @@ function Card({ category, title, content, imageSrc, author, minute, hour, $size 
       </CardContent>
 
       <CardContent className="card-contents">
-        <div className="card title">
-          <Link className="anchor-under" href="/">
-            {title}
-          </Link>
-        </div>
+        <div className="card title">{title}</div>
         <Flexbox className="card time" justifyContent="inherit">
           <AccessTimeIcon fontSize="small" />
           <p className="minute">{minute}</p>
@@ -76,17 +71,13 @@ function Card({ category, title, content, imageSrc, author, minute, hour, $size 
           <p className="hours">{hour}</p>
         </Flexbox>
 
-        <div className="card contents">
-          <Link className="anchor-under" href="/">
-            {content}
-          </Link>
-        </div>
+        <div className="card contents">{content}</div>
       </CardContent>
 
       <CardContent className="card-bottom">
         <Flexbox justifyContent="inherit">
           <Avatar>
-            <InsertEmoticonIcon fontSize="small" />
+            <InsertEmoticonIcon color="action" fontSize="small" />
           </Avatar>
           <p className="author">{author}</p>
         </Flexbox>

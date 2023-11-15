@@ -84,16 +84,8 @@ export const StyledCard = styled(Card)<T_StyledCardProps>(
         }
 
         &.contents {
-          a {
-            ${textStyle('body', 2)}
-            ${ellipsisLineClamp(3)}
-          }
-        }
-
-        .anchor-under {
-          &:hover {
-            text-decoration: underline;
-          }
+          ${textStyle('body', 2)}
+          ${ellipsisLineClamp(3)}
         }
       }
     }
@@ -146,11 +138,9 @@ export const StyledCard = styled(Card)<T_StyledCardProps>(
           }
 
           &.contents {
+            ${$size === 'sm' ? textStyle('body', 2) : textStyle('body', 1)}
+            ${$size === 'sm' ? ellipsisLineClamp(2) : ellipsisLineClamp(10)}
             color: ${neutralColor.dark3}; // #1A051D
-            a {
-              ${$size === 'sm' ? textStyle('body', 2) : textStyle('body', 1)}
-              ${$size === 'sm' ? ellipsisLineClamp(2) : ellipsisLineClamp(10)}
-            }
           }
         }
       }
