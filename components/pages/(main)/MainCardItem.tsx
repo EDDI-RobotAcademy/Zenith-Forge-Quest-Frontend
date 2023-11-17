@@ -77,7 +77,7 @@ function MainCardItem({ title, category, content, imageSrc, author, minute, hour
       <CardContent className="card-bottom">
         <Flexbox justifyContent="inherit">
           <Avatar>
-            <InsertEmoticonIcon color="action" fontSize="small" />
+            <InsertEmoticonIcon color="actions" fontSize="small" />
           </Avatar>
           <Typography>{author}</Typography>
         </Flexbox>
