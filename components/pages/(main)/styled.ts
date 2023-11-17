@@ -30,16 +30,6 @@ export const StyledMainPageContainer = styled(Grid)(
           color: ${neutralColor.dark3}; // #1A051D
           font-weight: 600;
         }
-
-        .show-more-text {
-          .text {
-            color: ${theme.palette.primary.dark}; // #6979F8
-            font-weight: 600;
-            &:hover {
-              opacity: 0.7;
-            }
-          }
-        }
       }
     }
 

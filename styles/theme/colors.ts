@@ -36,9 +36,7 @@ export const basePalette = {
     dark: '#1A051D',
   },
   action: {
-    light: '#FFFFFF',
-    main: '#FFFFFF',
-    dark: '#FFFFFF',
+    active: '#FFFFFF',
   },
 }
 

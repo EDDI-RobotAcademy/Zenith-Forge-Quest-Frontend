@@ -7,6 +7,8 @@ import CssBaseline from '@mui/material/CssBaseline'
 import React from 'react'
 import theme from '@/styles/theme/theme'
 import globalStyles from '@/styles/GlobalStyle'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 export default function ThemeRegistry(props: { options: any; children: any }) {
   const { options, children } = props
