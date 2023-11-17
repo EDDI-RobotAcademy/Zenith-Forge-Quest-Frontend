@@ -5,13 +5,10 @@ import { StyledMainPageContainer } from '@/components/pages/(main)/styled'
 import MainSection from '@/components/pages/(main)/MainSection'
 import { H6 } from '@/components/common/Typography/Typography'
 import TextLink from '@/components/common/TextLink/TextLink'
-import Checkbox from '@/components/common/CheckBox/ChekBox'
 
 export default function Home() {
   return (
     <StyledMainPageContainer>
-      <Checkbox text="test" />
-
       <section className="main-section recent">
         <MainCardItemList />
       </section>
