@@ -53,7 +53,7 @@ function Header() {
 
           <div className="user-btn-container mobile-hidden">
             <HeaderSearchButton />
-            <Button startIcon={<GitHubIcon color="action" />} className="login-btn" size="small" variant="contained">
+            <Button startIcon={<GitHubIcon color="actions" />} className="login-btn" size="small" variant="contained">
               GitHub 로그인
             </Button>
           </div>
