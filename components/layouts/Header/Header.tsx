@@ -10,7 +10,7 @@ import { useModal } from '@/hooks/useModal'
 import HeaderSearchButton from './HeaderSearchButton'
 import Button from '@/components/common/Button/Button'
 import Tooltip from '@/components/common/Tooltip/Tooltip'
-
+import GitHubIcon from '@mui/icons-material/GitHub'
 function Header() {
   const { isOpen, openModal, closeModal } = useModal()
 
@@ -30,6 +30,9 @@ function Header() {
               인기
             </Link>
             <Link className="navigation left-style" href="">
+              Q & A
+            </Link>
+            <Link className="navigation left-style" href="">
               채용 공고
             </Link>
           </nav>
@@ -38,23 +41,20 @@ function Header() {
         <div className="header-right">
           <div className="mobile-only">
             <SquareIconBtn onClick={openModal} className="icon search" color="primary" aria-label="search">
-              <SearchIcon />
+              <SearchIcon color="primary" />
             </SquareIconBtn>
 
-            <Tooltip title="Menu button">
-              <SquareIconBtn className="icon menu" color="primary" aria-label="menu">
-                <MenuIcon />
-              </SquareIconBtn>
-            </Tooltip>
+            <SquareIconBtn className="icon menu" color="primary" aria-label="menu">
+              <Tooltip title="Menu button">
+                <MenuIcon color="primary" />
+              </Tooltip>
+            </SquareIconBtn>
           </div>
 
           <div className="user-btn-container mobile-hidden">
             <HeaderSearchButton />
-            <Button className="login-btn" size="small" color="primary" variant="contained">
-              로그인
-            </Button>
-            <Button className="signup-btn" size="small" color="primary" variant="outlined">
-              회원가입
+            <Button startIcon={<GitHubIcon color="action" />} className="login-btn" size="small" variant="contained">
+              GitHub 로그인
             </Button>
           </div>
         </div>
