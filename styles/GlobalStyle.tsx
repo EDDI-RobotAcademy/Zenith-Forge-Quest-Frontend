@@ -43,6 +43,9 @@ const globalStyles = (
             background-color: #b0b0b0;
           }
         }
+        .react-datepicker {
+          font-family: ${notoSansKR} !important;
+        }
       }
 
       h1 {
