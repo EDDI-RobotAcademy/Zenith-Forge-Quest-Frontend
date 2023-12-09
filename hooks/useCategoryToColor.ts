@@ -1,4 +1,3 @@
-import { M_Main } from '@/types/model/main'
 import { T_CategoryType } from '@/types/styles/ui'
 
 function useCategoryToColor() {

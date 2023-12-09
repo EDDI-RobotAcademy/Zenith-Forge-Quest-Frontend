@@ -1,6 +1,8 @@
 import { GlobalStyles, css } from '@mui/material'
 import { notoSansKR } from './theme/fonts'
 import { neutralColor } from './theme/colors'
+import theme from './theme/theme'
+import customBreakpoints from './theme/breakpoints'
 
 const globalStyles = (
   <GlobalStyles
@@ -40,6 +42,9 @@ const globalStyles = (
           &:hover {
             background-color: #b0b0b0;
           }
+        }
+        .react-datepicker {
+          font-family: ${notoSansKR} !important;
         }
       }
 
@@ -88,6 +93,51 @@ const globalStyles = (
         clip: rect(0, 0, 0, 0) !important;
         white-space: nowrap !important;
         border: 0 !important;
+      }
+
+      ::selection {
+        color: #ffffff;
+        background-color: ${theme.palette.primary.dark}; // #6979F8
+      }
+
+      //* 반응형 미디어 쿼리
+      ${customBreakpoints.mobile} {
+        .mobile-hidden {
+          display: none !important; /* 모바일 화면 크기에서만 보이지 않음 */
+        }
+      }
+
+      ${customBreakpoints.tablet} {
+        .tablet-hidden {
+          display: none !important; /* 태블릿 화면 크기에서만 보이지 않음 */
+        }
+      }
+
+      ${customBreakpoints.desktop} {
+        .desktop-hidden {
+          display: none !important; /* 데스크탑 화면 크기에서만 보이지 않음 */
+        }
+      }
+
+      .mobile-only {
+        display: none;
+        ${customBreakpoints.mobile} {
+          display: block !important; /* 모바일 화면 크기에서만 보임 */
+        }
+      }
+
+      .tablet-only {
+        display: none;
+        ${customBreakpoints.tablet} {
+          display: block !important; /* 태블릿 화면 크기에서만 보임 */
+        }
+      }
+
+      .desktop-only {
+        display: none;
+        ${customBreakpoints.desktop} {
+          display: block !important; /* 데스크탑 화면 크기에서만 보임 */
+        }
       }
     `}
   />

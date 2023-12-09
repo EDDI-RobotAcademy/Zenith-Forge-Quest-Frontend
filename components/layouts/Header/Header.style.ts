@@ -52,9 +52,7 @@ export const StyledHeader = styled(AppBar)(
           a {
             ${textStyle('body', 2)};
             padding: 8px;
-            transition:
-              background-color 0.3s ease,
-              border-radius 0.3s ease;
+            transition: background-color 0.3s ease, border-radius 0.3s ease;
             &:hover {
               background-color: ${neutralColor.white2}; // #F7F5F9
               border-radius: 8px;
@@ -74,7 +72,7 @@ export const StyledHeader = styled(AppBar)(
         margin: 0 auto;
       }
     }
-  `,
+  `
 )
 
 export default StyledHeader

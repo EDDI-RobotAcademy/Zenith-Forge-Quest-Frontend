@@ -1,9 +1,5 @@
-'use client'
-
-import React from 'react'
-import MainCardItem from './MainCardItem'
-import { StyledMainCardItemList } from './styled'
 import Card from '@/components/common/Card/Card'
+import { StyledMainSection } from './styled'
 
 const fakeData = [
   {
@@ -38,49 +34,26 @@ const fakeData = [
     hour: '23시간 전',
     minute: '30분',
   },
-  {
-    mainCardNo: 4,
-    category: 'Career',
-    title: '연봉을 많이 받고 싶은 사람!?',
-    content: '연봉이냐 워라밸이냐 그것이 문제로다 인쉥은 언제나 고민 ',
-    imageSrc: '/images/team-work-meeting-with-females.jpg',
-    author: '사용자2',
-    hour: '23시간 전',
-    minute: '30분',
-  },
 ]
 
-function MainCardItemList() {
+function MainSection() {
   return (
-    <StyledMainCardItemList>
-      <div className="main-card">
+    <StyledMainSection>
+      {fakeData.map((data) => (
         <Card
-          category={fakeData[0].category}
-          title={fakeData[0].title}
-          content={fakeData[0].content}
-          imageSrc={fakeData[0].imageSrc}
-          author={fakeData[0].author}
-          hour={fakeData[0].hour}
-          minute={fakeData[0].minute}
+          $size="sm"
+          key={data.mainCardNo}
+          category={data.category}
+          title={data.title}
+          content={data.content}
+          imageSrc={data.imageSrc}
+          author={data.author}
+          hour={data.hour}
+          minute={data.minute}
         />
-      </div>
-
-      <div className="main-sub-list">
-        {fakeData.slice(1).map((item) => (
-          <MainCardItem
-            key={item.mainCardNo}
-            category={item.category}
-            title={item.title}
-            content={item.content}
-            imageSrc={item.imageSrc}
-            author={item.author}
-            hour={item.hour}
-            minute={item.minute}
-          />
-        ))}
-      </div>
-    </StyledMainCardItemList>
+      ))}
+    </StyledMainSection>
   )
 }
 
-export default MainCardItemList
+export default MainSection

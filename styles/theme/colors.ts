@@ -30,10 +30,19 @@ export const basePalette = {
     main: '#7DDFC3',
     dark: '#00C48C',
   },
+  inherit: {
+    light: '#D0C9D6',
+    main: '#3F3356',
+    dark: '#1A051D',
+  },
+  action: {
+    active: '#FFFFFF',
+  },
 }
 
 //* 중립 컬러 팔레트 - 성빈 -
 export const neutralColor = {
+  disabled: '#E9E8EA',
   background: '#FCFCFC',
   white1: '#FFFFFF',
   white2: '#F7F5F9',
