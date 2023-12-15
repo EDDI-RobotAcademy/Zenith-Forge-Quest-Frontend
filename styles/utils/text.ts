@@ -1,5 +1,5 @@
 import { T_TextStyle, bodies, buttons, captions, headers, overlines, subtitles } from '@/styles/theme/typography'
-import { assertUnreachable } from './assertUnreachable'
+import { assertUnreachable } from '../../utils/assertUnreachable'
 
 export function header(size: 1 | 2 | 3 | 4 | 5 | 6) {
   return {

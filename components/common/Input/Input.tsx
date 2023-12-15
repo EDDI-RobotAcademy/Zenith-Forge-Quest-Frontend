@@ -6,22 +6,26 @@ import clsx from 'clsx'
 
 type InputProps = {
   className?: string
+  value?: string
   field?: ControllerRenderProps<FieldValues>
   placeholder?: string
-  onClick?(): void
   type?: string
+  onClick?(): void
+  onChange?: React.ChangeEventHandler<HTMLInputElement>
   $size?: InputSize
-  $error?: any
+  $error?: boolean
 }
 
-function Input({ className, field, placeholder, type, onClick, $size, $error }: InputProps) {
+function Input({ className, value, field, placeholder, type, onClick, onChange, $size, $error }: InputProps) {
   return (
-    <StyledInput $size={$size}>
+    <StyledInput $size={$size} className="common-input-container">
       <input
         {...field}
         className={clsx(className, 'input', { error: $error })}
+        value={value}
         type={type}
         onClick={onClick}
+        onChange={onChange}
         placeholder={placeholder}
         autoComplete="off"
       />
