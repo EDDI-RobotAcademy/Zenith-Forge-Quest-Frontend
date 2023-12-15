@@ -2,7 +2,7 @@
 import { slideInDown } from '@/styles/theme/motion'
 import { StyledErrorMessage } from './styled'
 import { AnimatePresence } from 'framer-motion'
-
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 interface ErrorMessageProps {
   error?: string
 }
