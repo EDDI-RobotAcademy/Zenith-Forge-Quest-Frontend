@@ -45,7 +45,7 @@ export function inputSizeStyle($size?: InputSize) {
   }
 }
 
-export const StyledInput = styled(Box)<StyledInputProps>`
+export const StyledInput = styled('div')<StyledInputProps>`
   width: 100%;
 
   .input {
