@@ -1,3 +1,5 @@
+'use client'
+
 import { ListItem, ListItemText } from '@mui/material'
 import { StyledMainListItem } from './styled'
 import clsx from 'clsx'

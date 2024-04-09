@@ -1,3 +1,5 @@
+'use client'
+
 import { Avatar, CardContent, CardHeader, CardMedia, Tooltip } from '@mui/material'
 import { StyledCard, T_CardSize } from './Card.style'
 import { Flexbox } from '../FlexBox/FlexBox'
@@ -18,7 +20,6 @@ type T_CardProps = {
   author: string
   minute: string
   hour: string
-
   $size?: T_CardSize
 }
 
@@ -77,7 +78,7 @@ function Card({ category, title, content, imageSrc, author, minute, hour, $size 
       <CardContent className="card-bottom">
         <Flexbox justifyContent="inherit">
           <Avatar>
-            <InsertEmoticonIcon color="action" fontSize="small" />
+            <InsertEmoticonIcon fontSize="small" />
           </Avatar>
           <p className="author">{author}</p>
         </Flexbox>
