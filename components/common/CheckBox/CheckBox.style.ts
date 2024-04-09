@@ -1,7 +1,7 @@
 'use client'
 
 import { basePalette, neutralColor } from '@/styles/theme/colors'
-import { textStyle } from '@/utils/text'
+import { textStyle } from '@/styles/utils/text'
 import { css, styled } from '@mui/material'
 
 const CHECKBOX_SIZE = 16
