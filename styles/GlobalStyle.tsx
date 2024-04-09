@@ -72,6 +72,10 @@ const globalStyles = (
         }
       }
 
+      textarea {
+        resize: none;
+      }
+
       a,
       button {
         cursor: pointer;
