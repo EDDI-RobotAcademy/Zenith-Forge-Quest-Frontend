@@ -4,8 +4,8 @@ interface AuthLayoutProps {
   children: React.ReactNode
 }
 
-function AuthLayout({ children }: AuthLayoutProps) {
+function BoardLayout({ children }: AuthLayoutProps) {
   return <StyledBoardPageContainer>{children}</StyledBoardPageContainer>
 }
 
-export default AuthLayout
+export default BoardLayout
