@@ -3,13 +3,13 @@
 import customBreakpoints from '@/styles/theme/breakpoints'
 import { neutralColor } from '@/styles/theme/colors'
 import { ellipsisLineClamp } from '@/styles/utils/ellipsis'
-import { textStyle } from '@/utils/text'
+import { textStyle } from '@/styles/utils/text'
 import { Card, css, styled } from '@mui/material'
 
 export type T_CardSize = 'sm' | 'lg'
 
 export type T_StyledCardProps = {
-  $size: T_CardSize
+  $size?: T_CardSize
 }
 
 const MUI_AVATAR_ROOT = 24
@@ -17,12 +17,16 @@ const MAIN_CARD_BORDER_RADIUS = 12
 const MAIN_CARD_PADDING = 8
 const MAIN_CARD_MARGIN = 8
 
-export const StyledCard = styled(Card)<T_StyledCardProps>(
+export const StyledCard = styled(Card, {
+  shouldForwardProp: (prop) => prop !== '$size',
+})<T_StyledCardProps>(
   ({ theme, $size }) => css`
     width: 100%;
-    transition: border-color 0.3s, box-shadow 0.3s;
     border: 1px solid ${neutralColor.white2}; // #F7F5F9
     border-radius: ${MAIN_CARD_BORDER_RADIUS}px;
+    transition:
+      border-color 0.3s,
+      box-shadow 0.3s;
 
     &:hover {
       box-shadow: 0px 4px 16px ${neutralColor.white3}; // #ECE9F1
@@ -128,7 +132,7 @@ export const StyledCard = styled(Card)<T_StyledCardProps>(
       }
 
       .card-contents {
-        height: ${$size === 'sm' ? '160px' : '392px'}; // 예시 높이 값
+        height: ${$size === 'sm' ? '160px' : '392px'};
 
         .card {
           margin-bottom: ${$size === 'sm' ? MAIN_CARD_MARGIN : MAIN_CARD_MARGIN * 2}px;
@@ -148,5 +152,5 @@ export const StyledCard = styled(Card)<T_StyledCardProps>(
         padding-bottom: ${MAIN_CARD_PADDING * 2}px !important;
       }
     }
-  `
+  `,
 )

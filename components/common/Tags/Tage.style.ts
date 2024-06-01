@@ -3,7 +3,7 @@
 import { basePalette, neutralColor } from '@/styles/theme/colors'
 import { flexbox } from '@/styles/utils/flexbox'
 import { assertUnreachable } from '@/utils/assertUnreachable'
-import { textStyle } from '@/utils/text'
+import { textStyle } from '@/styles/utils/text'
 import { css } from '@emotion/react'
 import { styled } from '@mui/material'
 

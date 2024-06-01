@@ -3,9 +3,10 @@
 import { motion } from 'framer-motion'
 import { assertUnreachable } from '@/utils/assertUnreachable'
 import { Box, css, styled } from '@mui/material'
-import { textStyle } from '@/utils/text'
+import { textStyle } from '@/styles/utils/text'
 import { neutralColor } from '@/styles/theme/colors'
 import theme from '@/styles/theme/theme'
+import { flexbox } from '@/styles/utils/flexbox'
 
 export type InputSize = 'sm' | 'md' | 'lg'
 
@@ -44,16 +45,16 @@ export function inputSizeStyle($size?: InputSize) {
   }
 }
 
-export const StyledInput = styled(Box)<StyledInputProps>`
+export const StyledInput = styled('div')<StyledInputProps>`
   width: 100%;
 
   .input {
     ${({ $size }) => inputSizeStyle($size)};
     width: 100%;
-    padding: 10px 12px;
+    padding: 9.5px 12px;
     color: ${neutralColor.dark3}; // #1A051D
     background-color: ${neutralColor.white1}; // #FFFFFF
-    border: 1px solid ${neutralColor.white2}; // #F7F5F9
+    border: 1px solid ${neutralColor.white3}; // #ECE9F1
     border-radius: 8px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
@@ -87,6 +88,14 @@ export const StyledInput = styled(Box)<StyledInputProps>`
 
 export const StyledController = styled(Box)`
   margin-bottom: 16px;
+
+  .controller-text-container {
+    ${flexbox('space-between')}
+
+    .value-length {
+      margin-left: auto;
+    }
+  }
 `
 export const StyledErrorMessage = styled(motion.p)`
   ${textStyle('body', 2)}

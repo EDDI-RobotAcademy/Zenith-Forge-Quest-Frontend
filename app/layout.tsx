@@ -14,7 +14,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <body className={`${notoSansKR.className}`}>
           <ThemeRegistry options={{ key: 'mui' }}>
             <div id="root" />
-            <Header />
             {children}
           </ThemeRegistry>
         </body>

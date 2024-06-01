@@ -1,6 +1,6 @@
 import { neutralColor } from '@/styles/theme/colors'
 import { flexbox } from '@/styles/utils/flexbox'
-import { textStyle } from '@/utils/text'
+import { textStyle } from '@/styles/utils/text'
 import { css, styled } from '@mui/material'
 
 export const StyledDatepicker = styled('div')(

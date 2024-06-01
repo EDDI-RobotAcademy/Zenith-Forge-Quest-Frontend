@@ -8,8 +8,8 @@ interface I_ImageProps extends NextImageProps {
 
 function Image({ className, objectFit = 'contain', ...props }: I_ImageProps) {
   return (
-    <StyledImage className={className}>
-      <NextImage {...props} layout="fill" objectFit={objectFit} />
+    <StyledImage className={className} style={{ position: 'relative', width: '100%', height: '100%' }}>
+      <NextImage {...props} fill style={{ objectFit: 'cover' }} />
     </StyledImage>
   )
 }

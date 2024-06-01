@@ -3,7 +3,7 @@ import customBreakpoints from '@/styles/theme/breakpoints'
 import { neutralColor } from '@/styles/theme/colors'
 import { ellipsisLineClamp } from '@/styles/utils/ellipsis'
 import { flexbox } from '@/styles/utils/flexbox'
-import { textStyle } from '@/utils/text'
+import { textStyle } from '@/styles/utils/text'
 import { Card, css, styled, Box, Grid, List } from '@mui/material'
 
 const MUI_AVATAR_ROOT = 24
@@ -14,7 +14,7 @@ const MAIN_CARD_MARGIN = 8
 //* Main Page Layout
 export const StyledMainPageContainer = styled(Grid)(
   ({ theme }) => css`
-    margin-top: ${MAIN_CARD_MARGIN * 10}px;
+    margin-top: ${MAIN_CARD_MARGIN * 5}px;
     padding: 0 ${MAIN_CARD_PADDING * 2}px;
 
     .MuiPaper-root {
@@ -40,7 +40,7 @@ export const StyledMainPageContainer = styled(Grid)(
     ${customBreakpoints.desktop} {
       width: 1200px;
       padding: 0px;
-      margin: ${MAIN_CARD_MARGIN * 15}px auto 0 auto;
+      margin: ${MAIN_CARD_MARGIN * 8}px auto 0 auto;
     }
   `
 )
